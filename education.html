@@ -1,0 +1,215 @@
+<html>
+	<head>
+		<title> Welcome To My Site </title>
+		<style>
+			body {background:#aea25f;}
+			h1 {margin:0;font-size:30px;}
+			h2 {margin:0;font-size;18px;}
+			p {margin-top:30; text-align:justify;}
+			a {text-decoration:none;}
+		
+			#header-menu {
+			background-color: #7e7540;
+			width: 100vw;
+			height: 100px;
+			position: fixed;
+			top: 0;
+			left: 0;
+			display: flex;
+			justify-content: space-between;}
+
+			#menu {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 5px 15px;
+			border-radius: 10px;
+			background-color: #7e7540;
+			margin: 0 auto;}
+
+			#menu ul {
+			margin: 0;
+			padding: 0;
+			list-style: none;}
+
+			#menu li {
+			display: inline-block;}
+
+			#menu li a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;}
+		
+			button {background: #7e7540;
+			color: white;
+			text-decoration: none;
+			border: 2px solid transparent;
+			font-weight: bold;
+			padding: 11px 30px;
+			border-radius: 30px;
+			transition: .4s;
+			text-align: center;
+			display: block;
+			margin: 0 auto;
+			width: 100px;
+			margin: 0 auto;}
+		
+			#content {justify-content: center;
+			align-items: center;}
+			img {margin: 10px;}
+			
+			.toc {display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column; 
+			margin-left:230px;
+			margin-right:180px;
+			padding: 10px;}
+			
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			margin: 0;
+			background-color: #f2f2f2;}
+
+			#slideshow-container {
+			position: relative;
+			max-width: 600px;
+			text-align: center;}
+
+			.slide {display: none;}
+
+			.slide img {
+			max-width: 100%;
+			max-height: 400px;
+			margin-left:610px;
+			margin-right:610px;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);}
+
+			#prevBtn, #nextBtn {
+			position: absolute;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			margin-left:540px;
+			margin-right:540px;
+			font-size: 24px;
+			font-weight: bold;
+			color: white;
+			background-color: #7e7540;
+			border: none;
+			border-radius: 80%;
+			cursor: pointer;
+			transition: background-color 0.3s;}
+
+			#prevBtn { left: 10px; }
+			#nextBtn { right: 10px; }
+
+			#prevBtn:hover, #nextBtn:hover {
+			background-color: #7e7540;}
+			
+			.toc {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			margin-left: 230px;
+			margin-right: 180px;
+			padding: 10px;
+			background-color: #aea25f;
+			margin-top: 20px;}
+
+
+		
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header-menu">
+				<div id="menu">
+					<ul>
+					  <li><a href="home.html">HOME</a></li>
+					  <li><a href="aboutme.html">ABOUT ME</a></li>
+					  <li><a href="friends.html">FRIENDS</a></li>
+					  <li><a href="family.html">FAMILY</a></li>
+					  <li><a href="education.html">EDUCATION</a></li>
+					  <li><a href="gallery.html">GALLERY</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+			<div id="content">
+				<div id="right"></div>
+					<br /><br /><br />
+					<h1><center>MY EDUCATION</center></h1>
+				<div id="slideshow-container">
+					<!-- ... (slideshow content) ... -->
+					<button id="prevBtn" onclick="changeSlide(-1)">❮</button>
+					<button id="nextBtn" onclick="changeSlide(1)">❯</button>
+				</div>
+					  <div class="slide">
+						<img src="education/education.jpg" alt="Your Picture">
+					  </div>
+					  <div class="slide">
+						<img src="education/education3.jpg" alt="Your Picture">
+					  </div>
+					  <div class="slide">
+						<img src="education/education4.jpg" alt="Your Picture">
+					  </div>
+					  <div class="slide">
+						<img src="education/education2.jpg" alt="Your Picture">
+					  </div>
+					  <div class="slide">
+						<img src="gallery/gallery25.jpg" alt="Your Picture">
+					  </div>
+					  <div class="slide">
+						<img src="gallery/gallery27.jpg" alt="Your Picture">
+					  </div>
+					
+					  <button id="prevBtn" onclick="changeSlide(-1)">❮</button>
+					  <button id="nextBtn" onclick="changeSlide(1)">❯</button>
+			</div>
+
+				<div class="toc">
+					<h3>MY EDUCATION JOURNEY</h3>
+					<ul>
+					  <li><b><a href="#heading-1" style="color: black;">2008 - 2009 : TADIKA KEMAS</a></b></li>
+					  <li><b><a href="#heading-2" style="color: black;">2010 - 2015 : SEKOLAH KEBANGSAAN AU KERAMAT</a></b></li>
+					  <li><b><a href="#heading-3" style="color: black;">2016 - 2020 : SEKOLAH MENENGAH KEBANGSAAN SETIAWANGSA</a></b></li>
+					  <li><b><a href="#heading-3" style="color: black;">2021 - 2024 : UITM CAWANGAN NEGERI SEMBILAN, REMBAU</a></b></li>
+					</ul>
+				</div>
+					<a href="gallery.html"><button type="button">MORE</button></a>
+		
+		<script>
+			  let currentSlide = 0;
+			  showSlide(currentSlide);
+
+			  function showSlide(index) {
+				const slides = document.getElementsByClassName('slide');
+				if (index >= slides.length) {
+				  currentSlide = 0;
+				} else if (index < 0) {
+				  currentSlide = slides.length - 1;
+				} else {
+				  currentSlide = index;
+				}
+
+				for (let i = 0; i < slides.length; i++) {
+				  slides[i].style.display = 'none';
+				}
+
+				slides[currentSlide].style.display = 'block';
+			  }
+
+			  function changeSlide(n) {
+				showSlide(currentSlide + n);}
+		</script>
+	</body>
+</html>
+
+				
+				
+			
